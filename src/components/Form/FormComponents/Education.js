@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 
 class Education extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { handleEducationChange, education, onAddEducation, onDeleteEducation } = this.props;
     return (

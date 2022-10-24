@@ -4,10 +4,6 @@ import PersonalDetails from "./FormComponents/PersonalDetails";
 import WorkExperience from "./FormComponents/WorkExperience";
 
 class Form extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { handlePersonalDetailsChange, handleEducationChange, handleWorkExperienceChange, onAddEducation, onAddWorkExperience, onDeleteEducation, onDeleteWorkExperience, state } =
       this.props;

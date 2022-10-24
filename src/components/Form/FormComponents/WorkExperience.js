@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 
 class WorkExperience extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { handleWorkExperienceChange, workExperience, onAddWorkExperience, onDeleteWorkExperience } =
       this.props;
