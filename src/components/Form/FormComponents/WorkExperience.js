@@ -13,7 +13,7 @@ class WorkExperience extends Component {
         <h2>Work Experience</h2>
         {workExperience.map((section, index) => {
           const deleteButton =
-            workExperience.length > 1 ? <button onClick={(e) => onDeleteWorkExperience(e, index)}>Delete</button> : null;
+            workExperience.length > 1 ? <button onClick={(e) => onDeleteWorkExperience(e, section.id)}>Delete</button> : null;
           return (
             <div className="form-inputs" key={section.id}>
               <div className="form-element">

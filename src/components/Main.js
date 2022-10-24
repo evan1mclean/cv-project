@@ -119,12 +119,18 @@ class Main extends Component {
     });
   }
 
-  onDeleteEducation(e, index) {
-    
+  onDeleteEducation(e, id) {
+    e.preventDefault();
+    this.setState({
+      education: this.state.education.filter(section => section.id !== id)
+    })
   }
 
-  onDeleteWorkExperience(e, index) {
-
+  onDeleteWorkExperience(e, id) {
+    e.preventDefault();
+    this.setState({
+      workExperience: this.state.workExperience.filter(section => section.id !== id)
+    })
   }
 
   render() {

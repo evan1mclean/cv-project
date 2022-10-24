@@ -12,7 +12,7 @@ class Education extends Component {
         <h2>Education</h2>
         {education.map((section, index) => {
           const deleteButton =
-            education.length > 1 ? <button onClick={(e) => onDeleteEducation(e, index)}>Delete</button> : null;
+            education.length > 1 ? <button onClick={(e) => onDeleteEducation(e, section.id)}>Delete</button> : null;
           return (
             <div className="form-inputs" key={section.id}>
               <div className="form-element">
