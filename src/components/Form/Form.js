@@ -5,18 +5,22 @@ import WorkExperience from "./FormComponents/WorkExperience";
 
 class Form extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   render() {
-    return(
+    const { handlePersonalDetailsChange, handleEducationChange, handleWorkExperienceChange, onAddEducation, onAddWorkExperience, onDeleteEducation, onDeleteWorkExperience, state } =
+      this.props;
+    return (
       <form className="form">
-        <PersonalDetails />
-        <WorkExperience />
-        <Education />
+        <PersonalDetails
+          handlePersonalDetailsChange={handlePersonalDetailsChange}
+        />
+        <Education handleEducationChange={handleEducationChange} education={state.education} onAddEducation={onAddEducation} onDeleteEducation={onDeleteEducation}/>
+        <WorkExperience handleWorkExperienceChange={handleWorkExperienceChange} workExperience={state.workExperience} onAddWorkExperience={onAddWorkExperience} onDeleteWorkExperience={onDeleteWorkExperience}/>
       </form>
-    )
+    );
   }
 }
 
-export default Form
+export default Form;
