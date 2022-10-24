@@ -2,13 +2,13 @@ import React, { Component } from "react";
 
 class Education extends Component {
   render() {
-    const { handleChange, education, onAddEducation, onDeleteEducation } = this.props;
+    const { handleChange, education, onAddEducation, onDeleteSection } = this.props;
     return (
       <div className="form-section">
         <h2>Education</h2>
         {education.map((section) => {
           const deleteButton =
-            education.length > 1 ? <button onClick={(e) => onDeleteEducation(e, section.id)}>Delete</button> : null;
+            education.length > 1 ? <button onClick={(e) => onDeleteSection(e, education, section.id)}>Delete</button> : null;
           return (
             <div className="form-inputs" key={section.id}>
               <div className="form-element">

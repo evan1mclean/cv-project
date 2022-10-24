@@ -41,8 +41,7 @@ class Main extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.onAddEducation = this.onAddEducation.bind(this);
     this.onAddWorkExperience = this.onAddWorkExperience.bind(this);
-    this.onDeleteEducation = this.onDeleteEducation.bind(this);
-    this.onDeleteWorkExperience = this.onDeleteWorkExperience.bind(this);
+    this.onDeleteSection = this.onDeleteSection.bind(this);
   }
 
   handleChange(e, stateArray, id) {
@@ -56,7 +55,7 @@ class Main extends Component {
       });
       return;
     }
-    let section; 
+    let section;
     if (stateArray === this.state.education) {
       section = "education";
     }
@@ -110,19 +109,17 @@ class Main extends Component {
     });
   }
 
-  onDeleteEducation(e, id) {
+  onDeleteSection(e, stateArray, id) {
     e.preventDefault();
+    let section;
+    if (stateArray === this.state.education) {
+      section = "education";
+    }
+    if (stateArray === this.state.workExperience) {
+      section = "workExperience";
+    }
     this.setState({
-      education: this.state.education.filter((section) => section.id !== id),
-    });
-  }
-
-  onDeleteWorkExperience(e, id) {
-    e.preventDefault();
-    this.setState({
-      workExperience: this.state.workExperience.filter(
-        (section) => section.id !== id
-      ),
+      [section]: stateArray.filter((section) => section.id !== id),
     });
   }
 
@@ -134,8 +131,7 @@ class Main extends Component {
           state={this.state}
           onAddEducation={this.onAddEducation}
           onAddWorkExperience={this.onAddWorkExperience}
-          onDeleteEducation={this.onDeleteEducation}
-          onDeleteWorkExperience={this.onDeleteWorkExperience}
+          onDeleteSection={this.onDeleteSection}
         />
         <Preview
           personalDetails={this.state.personalDetails}
