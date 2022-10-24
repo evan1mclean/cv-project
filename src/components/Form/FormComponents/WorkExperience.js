@@ -2,12 +2,12 @@ import React, { Component } from "react";
 
 class WorkExperience extends Component {
   render() {
-    const { handleWorkExperienceChange, workExperience, onAddWorkExperience, onDeleteWorkExperience } =
+    const { handleChange, workExperience, onAddWorkExperience, onDeleteWorkExperience } =
       this.props;
     return (
       <div className="form-section">
         <h2>Work Experience</h2>
-        {workExperience.map((section, index) => {
+        {workExperience.map((section) => {
           const deleteButton =
             workExperience.length > 1 ? <button onClick={(e) => onDeleteWorkExperience(e, section.id)}>Delete</button> : null;
           return (
@@ -19,7 +19,7 @@ class WorkExperience extends Component {
                   name="company"
                   id="company"
                   placeholder="Enter Company"
-                  onChange={(e) => handleWorkExperienceChange(e, index)}
+                  onChange={(e) => handleChange(e, workExperience, section.id)}
                 />
               </div>
               <div className="form-element">
@@ -29,7 +29,7 @@ class WorkExperience extends Component {
                   name="position"
                   id="position"
                   placeholder="Enter Position"
-                  onChange={(e) => handleWorkExperienceChange(e, index)}
+                  onChange={(e) => handleChange(e, workExperience, section.id)}
                 />
               </div>
               <div className="form-element">
@@ -39,7 +39,7 @@ class WorkExperience extends Component {
                   name="workStartDate"
                   id="workStartDate"
                   placeholder="Enter Start Date"
-                  onChange={(e) => handleWorkExperienceChange(e, index)}
+                  onChange={(e) => handleChange(e, workExperience, section.id)}
                 />
               </div>
               <div className="form-element">
@@ -49,7 +49,7 @@ class WorkExperience extends Component {
                   name="workEndDate"
                   id="workEndDate"
                   placeholder="Enter End Date"
-                  onChange={(e) => handleWorkExperienceChange(e, index)}
+                  onChange={(e) => handleChange(e, workExperience, section.id)}
                 />
               </div>
               <div className="form-element">
@@ -59,7 +59,7 @@ class WorkExperience extends Component {
                   name="workDescription"
                   id="workDescription"
                   placeholder="Enter Description"
-                  onChange={(e) => handleWorkExperienceChange(e, index)}
+                  onChange={(e) => handleChange(e, workExperience, section.id)}
                 />
               </div>
               <button onClick={onAddWorkExperience}>Add</button>

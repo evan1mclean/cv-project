@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 
 class PersonalDetails extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
-    const { handlePersonalDetailsChange } = this.props;
+    const { handleChange, personalDetails } = this.props;
     return (
       <div className="form-section">
         <h2>Personal Details</h2>
@@ -18,7 +14,7 @@ class PersonalDetails extends Component {
               name="name"
               id="name"
               placeholder="Enter Full Name"
-              onChange={handlePersonalDetailsChange}
+              onChange={(e) => handleChange(e, personalDetails)}
             />
           </div>
           <div className="form-element">
@@ -28,7 +24,7 @@ class PersonalDetails extends Component {
               name="title"
               id="title"
               placeholder="Enter Job Title"
-              onChange={handlePersonalDetailsChange}
+              onChange={(e) => handleChange(e, personalDetails)}
             />
           </div>
           <div className="form-element">
@@ -38,7 +34,7 @@ class PersonalDetails extends Component {
               name="email"
               id="email"
               placeholder="Enter Email"
-              onChange={handlePersonalDetailsChange}
+              onChange={(e) => handleChange(e, personalDetails)}
             />
           </div>
           <div className="form-element">
@@ -48,7 +44,7 @@ class PersonalDetails extends Component {
               name="phoneNumber"
               id="phoneNumber"
               placeholder="Enter Phone Number"
-              onChange={handlePersonalDetailsChange}
+              onChange={(e) => handleChange(e, personalDetails)}
             />
           </div>
           <div className="form-element">
@@ -58,7 +54,7 @@ class PersonalDetails extends Component {
               name="location"
               id="location"
               placeholder="Enter Location"
-              onChange={handlePersonalDetailsChange}
+              onChange={(e) => handleChange(e, personalDetails)}
             />
           </div>
           <div className="form-element">
@@ -77,7 +73,7 @@ class PersonalDetails extends Component {
               name="summary"
               id="summary"
               placeholder="Introduce yourself"
-              onChange={handlePersonalDetailsChange}
+              onChange={(e) => handleChange(e, personalDetails)}
             ></textarea>
           </div>
         </div>

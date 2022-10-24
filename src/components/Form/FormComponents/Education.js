@@ -2,11 +2,11 @@ import React, { Component } from "react";
 
 class Education extends Component {
   render() {
-    const { handleEducationChange, education, onAddEducation, onDeleteEducation } = this.props;
+    const { handleChange, education, onAddEducation, onDeleteEducation } = this.props;
     return (
       <div className="form-section">
         <h2>Education</h2>
-        {education.map((section, index) => {
+        {education.map((section) => {
           const deleteButton =
             education.length > 1 ? <button onClick={(e) => onDeleteEducation(e, section.id)}>Delete</button> : null;
           return (
@@ -18,7 +18,7 @@ class Education extends Component {
                   name="degree"
                   id="degree"
                   placeholder="Enter Degree"
-                  onChange={(e) => handleEducationChange(e, index)}
+                  onChange={(e) => handleChange(e, education, section.id)}
                 />
               </div>
               <div className="form-element">
@@ -28,8 +28,7 @@ class Education extends Component {
                   name="university"
                   id="university"
                   placeholder="Enter University"
-                  onChange={(e) => handleEducationChange(e, index)}
-                />
+                  onChange={(e) => handleChange(e, education, section.id)}                />
               </div>
               <div className="form-element">
                 <label htmlFor="uniStartDate">Start Date</label>
@@ -38,8 +37,7 @@ class Education extends Component {
                   name="uniStartDate"
                   id="uniStartDate"
                   placeholder="Enter Start Date"
-                  onChange={(e) => handleEducationChange(e, index)}
-                />
+                  onChange={(e) => handleChange(e, education, section.id)}                />
               </div>
               <div className="form-element">
                 <label htmlFor="uniEndDate">End Date</label>
@@ -48,8 +46,7 @@ class Education extends Component {
                   name="uniEndDate"
                   id="uniEndDate"
                   placeholder="Enter End Date"
-                  onChange={(e) => handleEducationChange(e, index)}
-                />
+                  onChange={(e) => handleChange(e, education, section.id)}                />
               </div>
               <div className="form-element">
                 <label htmlFor="uniDescription">Description</label>
@@ -58,8 +55,7 @@ class Education extends Component {
                   name="uniDescription"
                   id="uniDescription"
                   placeholder="Enter Description"
-                  onChange={(e) => handleEducationChange(e, index)}
-                />
+                  onChange={(e) => handleChange(e, education, section.id)}                />
               </div>
               <button onClick={onAddEducation}>Add</button>
               {deleteButton}

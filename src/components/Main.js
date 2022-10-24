@@ -38,47 +38,38 @@ class Main extends Component {
         },
       ],
     };
-    this.handlePersonalDetailsChange =
-      this.handlePersonalDetailsChange.bind(this);
-    this.handleEducationChange = this.handleEducationChange.bind(this);
-    this.handleWorkExperienceChange =
-      this.handleWorkExperienceChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.onAddEducation = this.onAddEducation.bind(this);
     this.onAddWorkExperience = this.onAddWorkExperience.bind(this);
     this.onDeleteEducation = this.onDeleteEducation.bind(this);
     this.onDeleteWorkExperience = this.onDeleteWorkExperience.bind(this);
   }
 
-  handlePersonalDetailsChange(e) {
+  handleChange(e, stateArray, id) {
+    if (stateArray === this.state.personalDetails) {
+      this.setState({
+        ...this.state,
+        personalDetails: {
+          ...stateArray,
+          [e.target.name]: e.target.value,
+        },
+      });
+      return;
+    }
+    let section; 
+    if (stateArray === this.state.education) {
+      section = "education";
+    }
+    if (stateArray === this.state.workExperience) {
+      section = "workExperience";
+    }
     this.setState({
       ...this.state,
-      personalDetails: {
-        ...this.state.personalDetails,
-        [e.target.name]: e.target.value,
-      },
-    });
-  }
-
-  handleEducationChange(e, index) {
-    this.setState({
-      ...this.state,
-      education: this.state.education.map((section, sectionIndex) => {
-        if (index === sectionIndex) {
-          return { ...section, [e.target.name]: e.target.value };
+      [section]: stateArray.map((item) => {
+        if (item.id === id) {
+          return { ...item, [e.target.name]: e.target.value };
         }
-        return section;
-      }),
-    });
-  }
-
-  handleWorkExperienceChange(e, index) {
-    this.setState({
-      ...this.state,
-      workExperience: this.state.workExperience.map((section, sectionIndex) => {
-        if (index === sectionIndex) {
-          return { ...section, [e.target.name]: e.target.value };
-        }
-        return section;
+        return item;
       }),
     });
   }
@@ -122,24 +113,24 @@ class Main extends Component {
   onDeleteEducation(e, id) {
     e.preventDefault();
     this.setState({
-      education: this.state.education.filter(section => section.id !== id)
-    })
+      education: this.state.education.filter((section) => section.id !== id),
+    });
   }
 
   onDeleteWorkExperience(e, id) {
     e.preventDefault();
     this.setState({
-      workExperience: this.state.workExperience.filter(section => section.id !== id)
-    })
+      workExperience: this.state.workExperience.filter(
+        (section) => section.id !== id
+      ),
+    });
   }
 
   render() {
     return (
       <div className="main">
         <Form
-          handlePersonalDetailsChange={this.handlePersonalDetailsChange}
-          handleEducationChange={this.handleEducationChange}
-          handleWorkExperienceChange={this.handleWorkExperienceChange}
+          handleChange={this.handleChange}
           state={this.state}
           onAddEducation={this.onAddEducation}
           onAddWorkExperience={this.onAddWorkExperience}
