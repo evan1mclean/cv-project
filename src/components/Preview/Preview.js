@@ -14,21 +14,16 @@ class Preview extends Component {
           <h1>{personalDetails.name}</h1>
           <h2>{personalDetails.title}</h2>
           <div className="contact-details">
-            <span>
-              <img src={mailImg} alt="Mail Icon" /> {personalDetails.email}
-            </span>
+              <img src={mailImg} alt="Mail Icon" />
+              <span>{personalDetails.email}</span>
           </div>
           <div className="contact-details">
-            <span>
               <img src={phoneImg} alt="Phone Icon" />{" "}
-              {personalDetails.phoneNumber}
-            </span>
+              <span>{personalDetails.phoneNumber}</span>
           </div>
           <div className="contact-details">
-            <span>
               <img src={locationImg} alt="Location Icon" />{" "}
-              {personalDetails.location}
-            </span>
+              <span>{personalDetails.location}</span>
           </div>
           <div className="summary">
             <h2>Summary</h2>
@@ -47,7 +42,7 @@ class Preview extends Component {
                   {section.uniStartDate} - {section.uniEndDate}
                 </div>
                 <div className="section-details">
-                  <p className="bold-detail">{section.degree}</p>
+                  <p className="bold-detail">{section.degree},</p>
                   <p className="italic-detail">{section.university}</p>
                   <p className="description-detail">{section.uniDescription}</p>
                 </div>
@@ -64,7 +59,7 @@ class Preview extends Component {
                   {section.workStartDate} - {section.workEndDate}
                 </div>
                 <div className="section-details">
-                  <p className="bold-detail">{section.position}</p>
+                  <p className="bold-detail">{section.position},</p>
                   <p className="italic-detail">{section.company}</p>
                   <p className="description-detail">{section.workDescription}</p>
                 </div>
