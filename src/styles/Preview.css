@@ -1,5 +1,4 @@
 @import url(../index.css);
-
 .cv-preview {
   background-color: white;
   padding: 35px;
@@ -39,9 +38,10 @@
 }
 
 .profile-picture img {
+  object-fit: cover;
+  border-radius: 50%;
   height: 125px;
   width: 125px;
-  border-radius: 50%;
 }
 
 .summary h2, .education h2, .work-experience h2 {

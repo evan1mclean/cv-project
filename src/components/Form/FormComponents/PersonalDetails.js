@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class PersonalDetails extends Component {
   render() {
-    const { handleChange, personalDetails } = this.props;
+    const { handleChange, personalDetails, handleImageUpload } = this.props;
     return (
       <div className="form-section">
         <h2>Personal Details</h2>
@@ -58,16 +58,6 @@ class PersonalDetails extends Component {
             />
           </div>
           <div className="form-element">
-            <label htmlFor="photo">Upload a photo</label>
-            <input
-              type="file"
-              name="photo"
-              id="photo"
-              accept="image/*"
-              multiple={false}
-            />
-          </div>
-          <div className="form-element">
             <label htmlFor="summary">Summary</label>
             <textarea
               name="summary"
@@ -77,6 +67,17 @@ class PersonalDetails extends Component {
             ></textarea>
           </div>
         </div>
+        <div className="form-element">
+            <label className="photo-button" htmlFor="photo">Upload a photo</label>
+            <input
+              type="file"
+              name="photo"
+              id="photo"
+              accept="image/*"
+              multiple={false}
+              onChange={handleImageUpload}
+            />
+          </div>
       </div>
     );
   }

@@ -43,6 +43,7 @@ class Main extends Component {
     this.onAddEducation = this.onAddEducation.bind(this);
     this.onAddWorkExperience = this.onAddWorkExperience.bind(this);
     this.onDeleteSection = this.onDeleteSection.bind(this);
+    this.handleImageUpload = this.handleImageUpload.bind(this);
   }
 
   handleChange(e, stateArray, id) {
@@ -124,6 +125,24 @@ class Main extends Component {
     });
   }
 
+  handleImageUpload(e) {
+    const file = e.target.files[0];
+    if (!file) {
+      return;
+    }
+    const reader = new FileReader()
+    reader.readAsDataURL(file)
+    reader.onload = () => {
+      this.setState({
+        ...this.state,
+        personalDetails: {
+          ...this.state.personalDetails,
+          photo: reader.result,
+        },
+      });
+    }
+  }
+
   render() {
     return (
       <div className="main">
@@ -134,6 +153,7 @@ class Main extends Component {
           onDeleteSection={this.onDeleteSection}
           state={this.state}
           reference={this.myRef}
+          handleImageUpload={this.handleImageUpload}
           printButton={<ReactToPrint trigger={() => {
             return <button className="pdf-button" type="button">Generate PDF</button>
           }}

@@ -6,13 +6,14 @@ import '../../styles/Form.css'
 
 class Form extends Component {
   render() {
-    const { handleChange, onAddEducation, onAddWorkExperience, onDeleteSection, state, printButton } =
+    const { handleChange, onAddEducation, onAddWorkExperience, onDeleteSection, state, printButton, handleImageUpload } =
       this.props;
     return (
       <form className="form">
         <PersonalDetails
           handleChange={handleChange}
           personalDetails={state.personalDetails}
+          handleImageUpload={handleImageUpload}
         />
         <Education handleChange={handleChange} education={state.education} onAddEducation={onAddEducation} onDeleteSection={onDeleteSection}/>
         <WorkExperience handleChange={handleChange} workExperience={state.workExperience} onAddWorkExperience={onAddWorkExperience} onDeleteSection={onDeleteSection}/>

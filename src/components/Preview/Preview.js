@@ -8,6 +8,7 @@ import "../../styles/Preview.css";
 class Preview extends Component {
   render() {
     const { personalDetails, education, workExperience } = this.props;
+    const profilePhoto = personalDetails.photo === "" ? <img src={avatarImg} alt="Empty Profile Avatar" /> : <img src={personalDetails.photo} alt="Your upload" />
     return (
       <div className="cv-preview">
         <div className="personal-details">
@@ -30,7 +31,7 @@ class Preview extends Component {
             <p>{personalDetails.summary}</p>
           </div>
           <div className="profile-picture">
-            <img src={avatarImg} alt="Empty Profile Avatar" />
+            {profilePhoto}
           </div>
         </div>
         <div className="education">

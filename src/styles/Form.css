@@ -44,7 +44,11 @@ textarea {
   resize: none;
 }
 
-button {
+input[type=file] {
+  display: none;
+}
+
+button, .photo-button {
   font: inherit;
   border: 1px solid rgb(118, 118, 118);
   cursor: pointer;
@@ -55,11 +59,16 @@ button {
   margin-right: 10px;
 }
 
+.photo-button {
+  margin: 15px 0 0 0;
+  text-align: center;
+}
+
 .delete-button {
   background-color: var(--header-color);
 }
 
-button:hover {
+button:hover, .photo-button:hover {
   filter: brightness(90%);
 }
 
