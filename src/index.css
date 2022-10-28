@@ -1,10 +1,23 @@
+:root {
+  font-family: 'Roboto', sans-serif;
+  --header-color: rgb(198, 53, 53);
+  --shadow: 5px 1px 7px rgb(210 204 204);
+}
+
 body, #root {
+  background-color: #ededed;
   margin: 0;
-  height: 100vh;
+  height: 100%;
+}
+
+h1, h2, p {
+  margin: 0;
 }
 
 .App {
+  font: inherit;
   height: inherit;
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }

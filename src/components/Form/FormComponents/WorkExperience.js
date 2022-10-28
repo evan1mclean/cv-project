@@ -2,14 +2,25 @@ import React, { Component } from "react";
 
 class WorkExperience extends Component {
   render() {
-    const { handleChange, workExperience, onAddWorkExperience, onDeleteSection } =
-      this.props;
+    const {
+      handleChange,
+      workExperience,
+      onAddWorkExperience,
+      onDeleteSection,
+    } = this.props;
     return (
       <div className="form-section">
         <h2>Work Experience</h2>
         {workExperience.map((section) => {
           const deleteButton =
-            workExperience.length > 1 ? <button onClick={(e) => onDeleteSection(e, workExperience, section.id)}>Delete</button> : null;
+            workExperience.length > 1 ? (
+              <button
+                className="delete-button"
+                onClick={(e) => onDeleteSection(e, workExperience, section.id)}
+              >
+                Delete
+              </button>
+            ) : null;
           return (
             <div className="form-inputs" key={section.id}>
               <div className="form-element">
@@ -33,7 +44,7 @@ class WorkExperience extends Component {
                 />
               </div>
               <div className="form-element">
-                <label htmlFor="startDate">Start Date</label>
+                <label htmlFor="workStartDate">Start Date</label>
                 <input
                   type="text"
                   name="workStartDate"
@@ -62,8 +73,10 @@ class WorkExperience extends Component {
                   onChange={(e) => handleChange(e, workExperience, section.id)}
                 />
               </div>
-              <button onClick={onAddWorkExperience}>Add</button>
-              {deleteButton}
+              <div className="buttons">
+                <button onClick={onAddWorkExperience}>Add</button>
+                {deleteButton}
+              </div>
             </div>
           );
         })}

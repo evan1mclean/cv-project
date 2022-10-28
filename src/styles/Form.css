@@ -1,0 +1,64 @@
+@import url(../index.css);
+
+/* * {
+  border: 1px solid red;
+} */
+
+.form {
+  background-color: white;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  border-radius: 6px;
+  padding: 20px;
+  width: 595px;
+  box-shadow: var(--shadow);
+}
+
+.form-section h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.7rem;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.form-element {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+input, textarea {
+  font: inherit;
+  padding: 5px;
+}
+
+textarea {
+  height: 50px;
+  resize: none;
+}
+
+button {
+  font: inherit;
+  border: 1px solid rgb(118, 118, 118);
+  cursor: pointer;
+  border-radius: 3px;
+  color: white;
+  padding: 5px 15px;
+  background-color: #34c6c5;
+  margin-right: 10px;
+}
+
+.delete-button {
+  background-color: var(--header-color);
+}
+
+button:hover {
+  filter: brightness(90%);
+}

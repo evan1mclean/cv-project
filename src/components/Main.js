@@ -128,10 +128,10 @@ class Main extends Component {
       <div className="main">
         <Form
           handleChange={this.handleChange}
-          state={this.state}
           onAddEducation={this.onAddEducation}
           onAddWorkExperience={this.onAddWorkExperience}
           onDeleteSection={this.onDeleteSection}
+          state={this.state}
         />
         <Preview
           personalDetails={this.state.personalDetails}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Education from "./FormComponents/Education";
 import PersonalDetails from "./FormComponents/PersonalDetails";
 import WorkExperience from "./FormComponents/WorkExperience";
+import '../../styles/Form.css'
 
 class Form extends Component {
   render() {
