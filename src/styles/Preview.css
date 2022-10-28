@@ -78,3 +78,10 @@
 .description-detail {
   margin: 10px 0;
 }
+
+@media print {
+  .cv-preview {
+    width: 210mm;
+    height: 277mm;
+  }
+}

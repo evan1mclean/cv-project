@@ -3,6 +3,7 @@ import "../styles/Main.css";
 import Form from "./Form/Form";
 import Preview from "./Preview/Preview";
 import uniqid from "uniqid";
+import ReactToPrint from 'react-to-print';
 
 class Main extends Component {
   constructor(props) {
@@ -132,11 +133,17 @@ class Main extends Component {
           onAddWorkExperience={this.onAddWorkExperience}
           onDeleteSection={this.onDeleteSection}
           state={this.state}
+          reference={this.myRef}
+          printButton={<ReactToPrint trigger={() => {
+            return <button className="pdf-button" type="button">Generate PDF</button>
+          }}
+          content={() => this.componentRef}/>}
         />
         <Preview
           personalDetails={this.state.personalDetails}
           education={this.state.education}
           workExperience={this.state.workExperience}
+          ref={(el) => this.componentRef = el}
         />
       </div>
     );
