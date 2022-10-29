@@ -11,8 +11,8 @@
   flex-direction: column;
   gap: 25px;
   border-radius: 6px;
-  padding: 20px;
-  width: 40%;
+  padding: 35px;
+  width: 45%;
   box-shadow: var(--shadow);
 }
 

@@ -4,6 +4,10 @@
   --shadow: 5px 1px 7px rgb(210 204 204);
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body, #root {
   background-color: #ededed;
   margin: 0;
@@ -20,4 +24,25 @@ h1, h2, p {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cv-preview, .form {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .main {
+    padding: 20px;
+  }
+
+  .cv-preview, .form {
+    width: 100%;
+  }
 }
