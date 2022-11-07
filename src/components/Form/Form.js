@@ -11,7 +11,7 @@ const Form = (props) => {
     onAddWorkExperience,
     onDeleteSection,
     state,
-    printButton,
+    handlePrint,
     handleImageUpload,
   } = props;
   return (
@@ -33,7 +33,7 @@ const Form = (props) => {
         onAddWorkExperience={onAddWorkExperience}
         onDeleteSection={onDeleteSection}
       />
-      {printButton}
+      <button onClick={handlePrint} className="pdf-button" type="button">Generate PDF</button>
     </form>
   );
 };
